@@ -6,7 +6,14 @@ import com.sun.tools.javac.jvm.Items
  * @author ${user.name}
  */
 object App {
-  def areaOfCircle(radius: Int): Double = 3.14 * Math.pow(radius, 2)
+  def areaOfCircle(radius: String): Double = if (radius.isEmpty)
+    0.0
+  else
+    areaOfCircle(radius.toDouble)
+
+  def areaOfCircle(radius: Double): Double = {
+    Math.pow(radius.toDouble, 2) * Math.PI
+  }
 
   def sum(items: Int*): Int = {
     var total: Int = 0

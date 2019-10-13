@@ -126,10 +126,14 @@ import org.scalatest.FunSpec
 import Assert._
 @RunWith(classOf[JUnitRunner])
 class AppSpec extends FunSpec {
-  describe("Find the area of a circle") {
-    it("should calculate area of a circle based on a given radius") {
+  describe("Find the area of a circle from an radius") {
+    it("should calculate area of a circle based on a given radius as an integer") {
       assertEquals(12.57, App.areaOfCircle(2), 2)
       assertEquals(50.27, App.areaOfCircle(4), 2)
+    }
+
+    it("should calculate area of a circle based on a given radius as a String") {
+      assertEquals(12.57, App.areaOfCircle("2"), 2)
     }
   }
 }
