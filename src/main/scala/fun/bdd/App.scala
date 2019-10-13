@@ -29,7 +29,7 @@ object App {
   }
 
   def isEmpty(name: String): String = {
-    if (name.isEmpty()) "n/a"
+    if (name.isEmpty) "n/a"
     else name
   }
 
