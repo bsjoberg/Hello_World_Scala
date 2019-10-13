@@ -4,6 +4,17 @@ package fun.bdd
  * @author ${user.name}
  */
 object App {
+  def isDoubleGreater(number: Double): String = {
+    if (number > 0.0) "greater"
+    else if (number == 0.0) "same"
+    else "less"
+  }
+
+  def isEmpty(name: String): String = {
+    if (name.isEmpty()) "n/a"
+    else name
+  }
+
   def powerOf2(): IndexedSeq[Int] = for (i <- 0 to 8; pow = 1 << i) yield pow
 
   def mod3(): IndexedSeq[Int] = for (i <- 1 to 20 if i % 3 == 0) yield i

@@ -18,6 +18,31 @@ class AppTest {
 
     @Test
     def testPowerOf2(): Unit = assertArrayEquals(Vector(1,2,4,8,16,32,64,128,256).toArray, App.powerOf2().toArray)
+
+    @Test
+    def testNonEmptyString(): Unit = {
+        val name = "Test"
+        assertEquals("Test", App.isEmpty(name))
+    }
+
+    @Test
+    def testEmptyString(): Unit = {
+        val name = ""
+        assertEquals("n/a", App.isEmpty(name))
+    }
+
+    @Test
+    def testIsDoubleGreaterThanZero(): Unit = {
+        assertEquals("greater", App.isDoubleGreater(10.0))
+    }
+
+    @Test
+    def testIsDoubleSameAsZero(): Unit = {
+        assertEquals("same", App.isDoubleGreater(0.0))
+    }
+
+    @Test
+    def testIsDoubleLessThanZero(): Unit = assertEquals("less", App.isDoubleGreater(-1.0))
 }
 
 
