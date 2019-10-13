@@ -62,6 +62,12 @@ class AppTest {
 
     @Test
     def testMultiplySixTimesSeven() : Unit = assertEquals(42, App.multiplier(6, 7))
+
+    @Test
+    def testSumWithMultipleArgs(): Unit = {
+        assertEquals(20, App.sum(10, 5, 3, 2))
+        assertEquals(40, App.sum(5, 10, 5, 10, 5, 5))
+    }
 }
 
 

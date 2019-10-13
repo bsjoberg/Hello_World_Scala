@@ -1,9 +1,17 @@
 package fun.bdd
 
+import com.sun.tools.javac.jvm.Items
+
 /**
  * @author ${user.name}
  */
 object App {
+  def sum(items: Int*): Int = {
+    var total: Int = 0
+    for (i <- items) total += i
+    total
+  }
+
   def multiplier(multicand: Int, multiplier: Int): Int = multicand * multiplier
 
   def printFivePerLine(number: Int): String = {
