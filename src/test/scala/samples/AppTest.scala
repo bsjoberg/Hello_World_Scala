@@ -43,6 +43,12 @@ class AppTest {
 
     @Test
     def testIsDoubleLessThanZero(): Unit = assertEquals("less", App.isDoubleGreater(-1.0))
+
+    @Test
+    def testConvertCyanColorToHexStringValue(): Unit = assertEquals("#00FFFF", App.hexValueOfColor("cyan"))
+
+    @Test
+    def testConvertYellowColorToHexStringValue(): Unit = assertEquals("#FFFF00", App.hexValueOfColor("yellow"))
 }
 
 

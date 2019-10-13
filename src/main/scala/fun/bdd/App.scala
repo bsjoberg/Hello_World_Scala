@@ -4,6 +4,14 @@ package fun.bdd
  * @author ${user.name}
  */
 object App {
+  def hexValueOfColor(color: String): String = {
+    color match {
+      case "cyan" => "#00FFFF"
+      case "yellow" => "#FFFF00"
+      case other => "Unexpected Value"
+    }
+  }
+
   def isDoubleGreater(number: Double): String = {
     if (number > 0.0) "greater"
     else if (number == 0.0) "same"
@@ -25,5 +33,4 @@ object App {
     println( "Hello World!" )
     println("concat arguments = " + foo(args))
   }
-
 }
