@@ -4,6 +4,16 @@ package fun.bdd
  * @author ${user.name}
  */
 object App {
+  def printFivePerLine(number: Int): String = {
+    var numbersByFive: String = ""
+    for (i <- 1 to number by 5) {
+      for (j <- i to (i + 4)) { numbersByFive += s"$j, " }
+      println("i = " + i)
+      if (i + 5 < number) numbersByFive += "\n"
+    }
+    numbersByFive
+  }
+
   def hexValueOfColor(color: String): String = {
     color match {
       case "cyan" => "#00FFFF"
