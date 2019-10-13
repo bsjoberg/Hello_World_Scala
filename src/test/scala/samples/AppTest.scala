@@ -59,6 +59,9 @@ class AppTest {
     @Test
     def testFiveNumbersPerLineToFifteen(): Unit =
         assertEquals("1, 2, 3, 4, 5, \n6, 7, 8, 9, 10, \n11, 12, 13, 14, 15, ", App.printFivePerLine(15))
+
+    @Test
+    def testMultiplySixTimesSeven() : Unit = assertEquals(42, App.multiplier(6, 7))
 }
 
 

@@ -4,6 +4,8 @@ package fun.bdd
  * @author ${user.name}
  */
 object App {
+  def multiplier(multicand: Int, multiplier: Int): Int = multicand * multiplier
+
   def printFivePerLine(number: Int): String = {
     var numbersByFive: String = ""
     for (i <- 1 to number by 5) {
