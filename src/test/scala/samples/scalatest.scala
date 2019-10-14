@@ -25,11 +25,11 @@ http://www.scalatest.org/
 One way to use ScalaTest is to help make JUnit or TestNG tests more
 clear and concise. Here's an example:
 */
-import fun.bdd.Hello_World
+import fun.bdd.{App, Hello_World}
 
 import scala.collection._
 import org.scalatest.Assertions
-import org.junit.Test
+import org.junit.{Assert, Test}
 
 class StackSuite extends Assertions {
 
@@ -66,14 +66,14 @@ class ListSuite extends FunSuite with Matchers {
   }
 
   test("A non-empty list should not be empty") {
-    List(1, 2, 3) should not be ('empty)
-    List("fee", "fie", "foe", "fum") should not be ('empty)
+    List(1, 2, 3) should not be 'empty
+    List("fee", "fie", "foe", "fum") should not be 'empty
   }
 
   test("A list's length should equal the number of elements it contains") {
-    List() should have length (0)
-    List(1, 2) should have length (2)
-    List("fee", "fie", "foe", "fum") should have length (4)
+    List() should have length 0
+    List(1, 2) should have length 2
+    List("fee", "fie", "foe", "fum") should have length 4
   }
 }
 
@@ -117,6 +117,19 @@ class HelloWorldSpec extends FunSpec {
     it ("should respond with hello world when saying hi") {
       val message = Hello_World.sayHi()
       assert("Hello World" == message)
+    }
+  }
+}
+
+
+import org.scalatest.FunSpec
+import Assert._
+@RunWith(classOf[JUnitRunner])
+class AppSpec extends FunSpec {
+  describe("Find the area of a circle") {
+    it("should calculate area of a circle based on a given radius") {
+      assertEquals(12.57, App.areaOfCircle(2), 2)
+      assertEquals(50.27, App.areaOfCircle(4), 2)
     }
   }
 }
