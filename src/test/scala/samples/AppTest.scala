@@ -58,7 +58,8 @@ class AppTest {
 
     @Test
     def testFiveNumbersPerLineToFifteen(): Unit =
-        assertEquals("1, 2, 3, 4, 5, \n6, 7, 8, 9, 10, \n11, 12, 13, 14, 15, ", App.printFivePerLine(15))
+        assertEquals("1, 2, 3, 4, 5, \n6, 7, 8, 9, 10, \n11, 12, 13, 14, 15, ",
+            App.printFivePerLine(15))
 
     @Test
     def testMultiplySixTimesSeven() : Unit = assertEquals(42, App.multiplier(6, 7))
@@ -68,6 +69,12 @@ class AppTest {
         assertEquals(20, App.sum(10, 5, 3, 2))
         assertEquals(40, App.sum(5, 10, 5, 10, 5, 5))
     }
+
+    @Test
+    def testReserveOfString(): Unit =
+        assertEquals("ydaeR", App.safeStringOp("Ready", (s: String) => s.reverse))
+
+
+    @Test
+    def testReserveOfStringWhenNull(): Unit = assertNull(App.safeStringOp(null, (s: String) => s.reverse))
 }
-
-
