@@ -6,6 +6,12 @@ import com.sun.tools.javac.jvm.Items
  * @author ${user.name}
  */
 object App {
+  def safeStringOp(s: String, f: String => String): String = {
+    if (s != null) f(s) else s
+  }
+
+  def areaOfCircle(radius: Int): Double = 3.14 * Math.pow(radius, 2)
+
   def areaOfCircle(radius: String): Double = if (radius.isEmpty)
     0.0
   else
@@ -27,7 +33,6 @@ object App {
     var numbersByFive: String = ""
     for (i <- 1 to number by 5) {
       for (j <- i to (i + 4)) { numbersByFive += s"$j, " }
-      println("i = " + i)
       if (i + 5 < number) numbersByFive += "\n"
     }
     numbersByFive
