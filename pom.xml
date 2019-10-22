@@ -31,6 +31,11 @@
       <artifactId>scala-library</artifactId>
       <version>${scala.version}</version>
     </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.17</version>
+    </dependency>
 
     <!-- Test -->
     <dependency>
@@ -85,6 +90,15 @@
   <build>
     <sourceDirectory>src/main/scala</sourceDirectory>
     <testSourceDirectory>src/test/scala</testSourceDirectory>
+    <resources>
+      <resource>
+        <directory>src/test/resources</directory>
+        <targetPath>${project.build.directory}</targetPath>
+        <includes>
+          <include>log4j.properties</include>
+        </includes>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
         <!-- see http://davidb.github.com/scala-maven-plugin -->
@@ -124,7 +138,7 @@
           <junitxml>.</junitxml>
           <filereports>TestSuiteReport.txt</filereports>
           <!-- Comma separated list of JUnit test class names to execute -->
-          <jUnitClasses>samples.AppTest, samples.MySpecTest, samples.HelloWorldSpec, samples.ExampleSpec</jUnitClasses>
+          <jUnitClasses>samples.AppTest, samples.LoggingTest, samples.ExampleSpec, samples.HelloWorldSpec, samples.MySpecTest</jUnitClasses>
         </configuration>
         <executions>
           <execution>

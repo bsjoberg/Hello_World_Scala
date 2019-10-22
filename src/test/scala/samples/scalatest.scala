@@ -26,11 +26,14 @@ One way to use ScalaTest is to help make JUnit or TestNG tests more
 clear and concise. Here's an example:
 */
 import fun.bdd.{App, Hello_World}
+import org.junit.runner.RunWith
 
 import scala.collection._
 import org.scalatest.Assertions
 import org.junit.{Assert, Test}
+import org.scalatest.junit.JUnitRunner
 
+@RunWith(classOf[JUnitRunner])
 class StackSuite extends Assertions {
 
   @Test def stackShouldPopValuesIinLastInFirstOutOrder() {
@@ -54,9 +57,9 @@ Here's an example of a FunSuite with Matchers mixed in:
 */
 import org.scalatest.FunSuite
 import org.scalatest.Matchers
-
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
+
 @RunWith(classOf[JUnitRunner])
 class ListSuite extends FunSuite with Matchers {
 
