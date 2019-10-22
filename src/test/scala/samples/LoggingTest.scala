@@ -3,9 +3,7 @@ package samples
 import java.io.File
 
 import fun.bdd.Logging
-import org.junit.runner.RunWith
 import org.junit.{After, Assert, Before, Test}
-import org.scalatest.junit.JUnitRunner
 
 class LoggingTest {
   val pathToLogFile: String = "test_log4j/log.out"

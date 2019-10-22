@@ -25,13 +25,14 @@ http://www.scalatest.org/
 One way to use ScalaTest is to help make JUnit or TestNG tests more
 clear and concise. Here's an example:
 */
+
 import fun.bdd.{App, Hello_World}
 import org.junit.runner.RunWith
+import org.junit.{Assert, Test}
+import org.scalatest.Assertions
+import org.scalatest.junit.JUnitRunner
 
 import scala.collection._
-import org.scalatest.Assertions
-import org.junit.{Assert, Test}
-import org.scalatest.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
 class StackSuite extends Assertions {
@@ -55,17 +56,17 @@ class StackSuite extends Assertions {
 /*
 Here's an example of a FunSuite with Matchers mixed in:
 */
-import org.scalatest.FunSuite
-import org.scalatest.Matchers
+
 import org.junit.runner.RunWith
+import org.scalatest.{FunSuite, Matchers}
 import org.scalatest.junit.JUnitRunner
 
 @RunWith(classOf[JUnitRunner])
 class ListSuite extends FunSuite with Matchers {
 
   test("An empty list should be empty") {
-    List() should be ('empty)
-    Nil should be ('empty)
+    List() should be('empty)
+    Nil should be('empty)
   }
 
   test("A non-empty list should not be empty") {
@@ -89,7 +90,9 @@ A Map
 - should only contain keys and values that were added to it
 - should report its size as the number of key/value pairs it contains
 */
+
 import org.scalatest.FunSpec
+
 @RunWith(classOf[JUnitRunner])
 class ExampleSpec extends FunSpec {
 
@@ -113,11 +116,12 @@ class ExampleSpec extends FunSpec {
 }
 
 import org.scalatest.FunSpec
+
 @RunWith(classOf[JUnitRunner])
 class HelloWorldSpec extends FunSpec {
 
   describe("Hello World") {
-    it ("should respond with hello world when saying hi") {
+    it("should respond with hello world when saying hi") {
       val message = Hello_World.sayHi()
       assert("Hello World" == message)
     }
@@ -125,8 +129,9 @@ class HelloWorldSpec extends FunSpec {
 }
 
 
+import org.junit.Assert._
 import org.scalatest.FunSpec
-import Assert._
+
 @RunWith(classOf[JUnitRunner])
 class AppSpec extends FunSpec {
   describe("Find the area of a circle from an radius") {
