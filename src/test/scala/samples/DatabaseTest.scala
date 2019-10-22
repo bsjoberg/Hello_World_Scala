@@ -12,4 +12,9 @@ class DatabaseTest {
         Mockito.when(databaseMock.getLastNameByID(1234)).thenReturn("Smith")
         Assert.assertEquals("Smith", databaseMock.getLastNameByID(1234))
     }
+
+    @Test
+    def userAccountNotRetrievedByInvalidID(): Unit = {
+
+    }
 }
