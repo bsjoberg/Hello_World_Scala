@@ -72,10 +72,10 @@ class AppTest {
     }
 
     @Test
-    def reserveOfString(): Unit =
+    def reverseOfString(): Unit =
         assertEquals("ydaeR", App.safeStringOp("Ready", (s: String) => s.reverse))
 
 
     @Test
-    def reserveOfStringWhenNull(): Unit = assertNull(App.safeStringOp(null, (s: String) => s.reverse))
+    def reverseOfStringWhenNull(): Unit = assertNull(App.safeStringOp(null, (s: String) => s.reverse))
 }
