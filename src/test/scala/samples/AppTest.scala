@@ -72,4 +72,19 @@ class AppTest {
 
   @Test
   def reverseOfStringWhenNull(): Unit = assertNull(App.safeStringOp(null, (s: String) => s.reverse))
+
+  @Test
+  def doubleTheValueOfAnIntOverZero(): Unit = {
+    val myDouble: Int => Int = App.double
+    val myDoubleCopy = myDouble
+    assertEquals(20, myDoubleCopy(10))
+    assertEquals(30, myDouble(15))
+  }
+
+  @Test
+  def maxOfTwoPositiveNumbers(): Unit = {
+    val maximum: (Int, Int) => Int = App.max
+    assertEquals(40, maximum(20, 40))
+    assertEquals(30, App.max(30, 10))
+  }
 }

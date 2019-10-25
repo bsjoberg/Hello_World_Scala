@@ -4,6 +4,10 @@ package fun.bdd
  * @author ${user.name}
  */
 object App {
+  def max(firstNumber: Int, secondNumber: Int): Int = if (firstNumber > secondNumber) firstNumber else secondNumber
+
+  def double(value: Int): Int = value * 2
+
   def safeStringOp(s: String, f: String => String): String = {
     if (s != null) f(s) else s
   }
