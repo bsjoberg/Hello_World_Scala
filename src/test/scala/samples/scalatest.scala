@@ -27,8 +27,8 @@ clear and concise. Here's an example:
 */
 
 import fun.bdd.{App, Hello_World}
+import org.junit.Test
 import org.junit.runner.RunWith
-import org.junit.{Assert, Test}
 import org.scalatest.Assertions
 import org.scalatest.junit.JUnitRunner
 
@@ -58,8 +58,8 @@ Here's an example of a FunSuite with Matchers mixed in:
 */
 
 import org.junit.runner.RunWith
-import org.scalatest.{FunSuite, Matchers}
 import org.scalatest.junit.JUnitRunner
+import org.scalatest.{FunSuite, Matchers}
 
 @RunWith(classOf[JUnitRunner])
 class ListSuite extends FunSuite with Matchers {
