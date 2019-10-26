@@ -33,11 +33,9 @@ object App {
 
   def printFivePerLine(number: Int): String = {
     var numbersByFive: String = ""
-    for (i <- 1 to number by 5) {
-      for (j <- i to (i + 4)) {
-        numbersByFive += s"$j, "
-      }
-      if (i + 5 < number) numbersByFive += "\n"
+    for (i <- 1 to number) {
+      numbersByFive += s"$i, "
+      if (i % 5 == 0 && i < number) numbersByFive += "\n"
     }
     numbersByFive
   }

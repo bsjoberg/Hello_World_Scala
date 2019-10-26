@@ -49,8 +49,11 @@ class AppTest {
     assertEquals("#FFFF00", App.hexValueOfColor("yellow"))
 
   @Test
-  def fiveNumbersPerLineToTen(): Unit =
+  def fiveNumbersPerLineToTen(): Unit = {
+    val myPrintFivePerLine = App.printFivePerLine _
     assertEquals("1, 2, 3, 4, 5, \n6, 7, 8, 9, 10, ", App.printFivePerLine(10))
+    assertEquals("1, 2, 3, 4, 5, \n6, 7, 8, 9, 10, \n11, ", myPrintFivePerLine(11));
+  }
 
   @Test
   def fiveNumbersPerLineToFifteen(): Unit =
