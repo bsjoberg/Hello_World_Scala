@@ -115,19 +115,6 @@ class ExampleSpec extends FunSpec {
   }
 }
 
-import org.scalatest.FunSpec
-
-@RunWith(classOf[JUnitRunner])
-class HelloWorldSpec extends FunSpec {
-
-  describe("Hello World") {
-    it("should respond with hello world when saying hi") {
-      val message = Hello_World.sayHi()
-      assert("Hello World" == message)
-    }
-  }
-}
-
 
 import org.junit.Assert._
 import org.scalatest.FunSpec
