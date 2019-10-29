@@ -90,6 +90,13 @@ class AppTest {
   }
 
   @Test
+  def greetsMeByMyNameFunctionLiteral(): Unit = {
+    val greeter = (name: String) => s"Hello, $name"
+    assertEquals("Hello, Brian", greeter("Brian"))
+  }
+
+
+  @Test
   def maxOfTwoPositiveNumbers(): Unit = {
     val maximum: (Int, Int) => Int = App.max
     assertEquals(40, maximum(20, 40))
