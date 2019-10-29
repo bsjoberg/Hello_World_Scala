@@ -6,8 +6,21 @@ package fun.bdd
 object App {
   def max(firstNumber: Int, secondNumber: Int): Int = if (firstNumber > secondNumber) firstNumber else secondNumber
 
+  /**
+   * Double the the number that was passed in
+   *
+   * @param value the number to double
+   * @return the doubled number
+   */
   def double(value: Int): Int = value * 2
 
+  /**
+   * Ensure a null string isn't passed to the function
+   *
+   * @param s string to execute some function on
+   * @param f function to pass in
+   * @return the String that was executed
+   */
   def safeStringOp(s: String, f: String => String): String = {
     if (s != null) f(s) else s
   }
@@ -65,10 +78,10 @@ object App {
 
   def mod3(): IndexedSeq[Int] = for (i <- 1 to 20 if i % 3 == 0) yield i
 
-  def foo(x: Array[String]): String = x.foldLeft("")((a, b) => a + b)
-
   def main(args: Array[String]) {
     println("Hello World!")
     println("concat arguments = " + foo(args))
   }
+
+  def foo(x: Array[String]): String = x.foldLeft("")((a, b) => a + b)
 }

@@ -82,6 +82,11 @@ class AppTest {
   }
 
   @Test
+  def reverseStringFunctionLiteralUsingPlaceholderSyntax(): Unit = {
+    assertEquals("yhtlaeH", App.safeStringOp("Healthy", _.reverse))
+  }
+
+  @Test
   def doubleTheValueOfAnIntOverZero(): Unit = {
     val myDouble: Int => Int = App.double
     val myDoubleCopy = myDouble
@@ -94,7 +99,6 @@ class AppTest {
     val greeter = (name: String) => s"Hello, $name"
     assertEquals("Hello, Brian", greeter("Brian"))
   }
-
 
   @Test
   def maxOfTwoPositiveNumbers(): Unit = {
