@@ -12,6 +12,8 @@ object App {
     if (s != null) f(s) else s
   }
 
+  def reverser(s: String): String = s.reverse
+
   def areaOfCircle(radius: Int): Double = 3.14 * Math.pow(radius, 2)
 
   def areaOfCircle(radius: String): Double = if (radius.isEmpty)
