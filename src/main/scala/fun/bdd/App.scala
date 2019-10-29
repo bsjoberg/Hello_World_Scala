@@ -4,6 +4,8 @@ package fun.bdd
  * @author ${user.name}
  */
 object App {
+  def combination(x: Int, y: Int, function: (Int, Int) => Int): Int = function(x, y)
+
   def max(firstNumber: Int, secondNumber: Int): Int = if (firstNumber > secondNumber) firstNumber else secondNumber
 
   /**

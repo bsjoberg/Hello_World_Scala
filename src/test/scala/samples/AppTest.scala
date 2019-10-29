@@ -106,4 +106,9 @@ class AppTest {
     assertEquals(40, maximum(20, 40))
     assertEquals(30, App.max(30, 10))
   }
+
+  @Test
+  def combinationOfTwoNumbersWithFunctionLiteralUsingPlaceholderSyntax(): Unit = {
+    assertEquals(276, App.combination(23, 12, _ * _))
+  }
 }
