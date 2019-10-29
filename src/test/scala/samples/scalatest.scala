@@ -26,18 +26,18 @@ One way to use ScalaTest is to help make JUnit or TestNG tests more
 clear and concise. Here's an example:
 */
 
-import fun.bdd.{App, Hello_World}
+import fun.bdd.App
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.scalatest.Assertions
+import org.scalatest.{Assertions, FunSuite, Suite}
 import org.scalatest.junit.JUnitRunner
 
 import scala.collection._
 
 @RunWith(classOf[JUnitRunner])
-class StackSuite extends Assertions {
+class StackSuite extends FunSuite {
 
-  @Test def stackShouldPopValuesIinLastInFirstOutOrder() {
+  test("pop invoked on a non-empty stack") {
     val stack = new mutable.ArrayStack[Int]
     stack.push(1)
     stack.push(2)
@@ -45,7 +45,7 @@ class StackSuite extends Assertions {
     assert(stack.pop() === 1)
   }
 
-  @Test def stackShouldThrowRuntimeExceptionIfAnEmptyArrayStackIsPopped() {
+  test("throw exception when popping empty stack") {
     val emptyStack = new mutable.ArrayStack[String]
     intercept[RuntimeException] {
       emptyStack.pop()
