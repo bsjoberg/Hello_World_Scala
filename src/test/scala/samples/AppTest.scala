@@ -49,8 +49,11 @@ class AppTest {
     assertEquals("#FFFF00", App.hexValueOfColor("yellow"))
 
   @Test
-  def fiveNumbersPerLineToTen(): Unit =
+  def fiveNumbersPerLineToTen(): Unit = {
+    val myPrintFivePerLine = App.printFivePerLine _
     assertEquals("1, 2, 3, 4, 5, \n6, 7, 8, 9, 10, ", App.printFivePerLine(10))
+    assertEquals("1, 2, 3, 4, 5, \n6, 7, 8, 9, 10, \n11, ", myPrintFivePerLine(11))
+  }
 
   @Test
   def fiveNumbersPerLineToFifteen(): Unit =
@@ -72,4 +75,40 @@ class AppTest {
 
   @Test
   def reverseOfStringWhenNull(): Unit = assertNull(App.safeStringOp(null, (s: String) => s.reverse))
+
+  @Test
+  def reverserHigherOrderFunctionReturnsNull(): Unit = {
+    assertNull(App.safeStringOp(null, App.reverser))
+  }
+
+  @Test
+  def reverseStringFunctionLiteralUsingPlaceholderSyntax(): Unit = {
+    assertEquals("yhtlaeH", App.safeStringOp("Healthy", _.reverse))
+  }
+
+  @Test
+  def doubleTheValueOfAnIntOverZero(): Unit = {
+    val myDouble: Int => Int = App.double
+    val myDoubleCopy = myDouble
+    assertEquals(20, myDoubleCopy(10))
+    assertEquals(30, myDouble(15))
+  }
+
+  @Test
+  def greetsMeByMyNameFunctionLiteral(): Unit = {
+    val greeter = (name: String) => s"Hello, $name"
+    assertEquals("Hello, Brian", greeter("Brian"))
+  }
+
+  @Test
+  def maxOfTwoPositiveNumbers(): Unit = {
+    val maximum: (Int, Int) => Int = App.max
+    assertEquals(40, maximum(20, 40))
+    assertEquals(30, App.max(30, 10))
+  }
+
+  @Test
+  def combinationOfTwoNumbersWithFunctionLiteralUsingPlaceholderSyntax(): Unit = {
+    assertEquals(276, App.combination(23, 12, _ * _))
+  }
 }

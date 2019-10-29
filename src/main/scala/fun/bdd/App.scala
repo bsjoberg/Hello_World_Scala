@@ -4,9 +4,30 @@ package fun.bdd
  * @author ${user.name}
  */
 object App {
+  def combination(x: Int, y: Int, function: (Int, Int) => Int): Int = function(x, y)
+
+  def max(firstNumber: Int, secondNumber: Int): Int = if (firstNumber > secondNumber) firstNumber else secondNumber
+
+  /**
+   * Double the the number that was passed in
+   *
+   * @param value the number to double
+   * @return the doubled number
+   */
+  def double(value: Int): Int = value * 2
+
+  /**
+   * Ensure a null string isn't passed to the function
+   *
+   * @param s string to execute some function on
+   * @param f function to pass in
+   * @return the String that was executed
+   */
   def safeStringOp(s: String, f: String => String): String = {
     if (s != null) f(s) else s
   }
+
+  def reverser(s: String): String = s.reverse
 
   def areaOfCircle(radius: Int): Double = 3.14 * Math.pow(radius, 2)
 
@@ -29,11 +50,9 @@ object App {
 
   def printFivePerLine(number: Int): String = {
     var numbersByFive: String = ""
-    for (i <- 1 to number by 5) {
-      for (j <- i to (i + 4)) {
-        numbersByFive += s"$j, "
-      }
-      if (i + 5 < number) numbersByFive += "\n"
+    for (i <- 1 to number) {
+      numbersByFive += s"$i, "
+      if (i % 5 == 0 && i < number) numbersByFive += "\n"
     }
     numbersByFive
   }
@@ -61,10 +80,10 @@ object App {
 
   def mod3(): IndexedSeq[Int] = for (i <- 1 to 20 if i % 3 == 0) yield i
 
-  def foo(x: Array[String]): String = x.foldLeft("")((a, b) => a + b)
-
   def main(args: Array[String]) {
     println("Hello World!")
     println("concat arguments = " + foo(args))
   }
+
+  def foo(x: Array[String]): String = x.foldLeft("")((a, b) => a + b)
 }
